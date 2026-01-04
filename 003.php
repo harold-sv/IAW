@@ -56,4 +56,9 @@ foreach ($todasLasPalabras as $palabra) {
     }
 }
 
+// Mostramos la palabra más repetida:
+echo "<h3>La palabra más frecuente:</h3>";
+echo "La palabra que más destaca es <strong>'$palabraMasRepetida'</strong>, apareciendo un total de $maxVeces veces.";
+echo "</div>";
+
 ?>
