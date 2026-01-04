@@ -47,4 +47,13 @@ foreach ($conteo as $palabra => $cantidad) {
     }
 }
 
+// 6. Filtramos palabras de menos de 3 letras:
+$palabrasFiltradas = [];
+foreach ($todasLasPalabras as $palabra) {
+    // eliminamos espacios y verificamos longitud
+    if (strlen(trim($palabra)) >= 3) {
+        $palabrasFiltradas[] = trim($palabra);
+    }
+}
+
 ?>
