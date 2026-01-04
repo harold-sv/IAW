@@ -16,4 +16,17 @@ foreach ($carrito as $item) {
     echo "Precio unitario: {$item['precio']}€ | Cantidad: {$item['cantidad']} <br>";
     echo "Subtotal: <p>$subtotal €</p> <hr>";
 }
+// Calculamos el total del carrito.
+function calcularTotal($carrito) {
+    $sumaTotal = 0;
+    foreach ($carrito as $item) {
+        $sumaTotal += $item['precio'] * $item['cantidad'];
+    }
+    return $sumaTotal;
+}
+
+// 2. Calculamos el total del carrito.
+$totalSinDescuento = calcularTotal($carrito);
+echo "<h3>Total sin descuento: $totalSinDescuento €</h3>";
+
 ?>
