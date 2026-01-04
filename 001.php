@@ -33,6 +33,7 @@ foreach ($estudiantes as $nombre => $notas) {
         $estado = "Suspenso";
         $suspendidos++; // Aumentamos el contador de suspendidos
     }
+
     //Promedio más alto:
     if ($promedio > $mejorPromedio) {
         $mejorPromedio = $promedio;
@@ -44,12 +45,12 @@ foreach ($estudiantes as $nombre => $notas) {
     // Mostramos los resultados promedio y estado del estudiante:
     echo "Estudiante: <p>$nombre</p> | Promedio: " . number_format($promedio, 1) . " | Estado: $estado <br>";
     
+}
     //Mostramos el total de aprobados y suspendidos
     echo "Total de aprobados: $aprobados <br>";
     echo "Total de suspendidos: $suspendidos <br>";
 
     // mostramos el estudiante con el mejor promedio
     echo "<h3>Estudiante con el promedio más alto: $mejorEstudiante (" . number_format($mejorPromedio, 1) . ")</h3>";
-}
 
 ?>
