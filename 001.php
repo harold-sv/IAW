@@ -9,7 +9,10 @@ $estudiantes = [
     "Carlos" => [6, 6, 6]
 ];
 // Función para calcular el promedio de notas:
-function calcularPromedio($notas) {
-    $suma = array_sum($notas);
-    return $suma / count($notas);
+foreach ($estudiantes as $nombre => $notas){
+        function calcularPromedio($notas){
+            $suma = array_sum($notas);   
+            $totalNotas = count($notas); 
+            return $suma / $totalNotas; 
+        }
 }
