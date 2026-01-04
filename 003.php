@@ -17,4 +17,10 @@ $textoLimpio = str_replace([",", ".", "\n", "\r"], "", $texto);
 // 1. Convertimos todo a minúsculas
 $textoMinusculas = strtolower($textoLimpio);
 
+// Convertimos array a explode:
+$todasLasPalabras = explode(" ", $textoMinusculas);
+
+// 2. Total de palabras:
+$totalPalabrasValidas = count($palabrasFiltradas);
+
 ?>
