@@ -14,7 +14,10 @@ function calcularPromedio($notas) {
     $cantidad = count($notas);   
     return $suma / $cantidad;    
 }
-
+$aprobados = 0;// Iniciamos contador de estudiantes 
+$suspendidos = 0;
+$mejorPromedio = 0;
+$mejorEstudiante = "";
 
 // 3. Recorremos el array de estudiantes para calcular promedios y estados:
 foreach ($estudiantes as $nombre => $notas) {
@@ -35,7 +38,8 @@ foreach ($estudiantes as $nombre => $notas) {
         $mejorPromedio = $promedio;
         $mejorEstudiante = $nombre;
     }
-
+    //Título del listado
+    echo "<h2>Calificaciones de los estudiantes</h2>";
     // Mostramos los resultados promedio y estado del estudiante:
     echo "Estudiante: <p>$nombre</p> | Promedio: " . number_format($promedio, 1) . " | Estado: $estado <br>";
     
