@@ -1,32 +1,37 @@
 <?php
-// Gestor de notas de Estudiantes:
 
-// Creamos el array:
+// 1. Array estudiantes:
 $estudiantes = [
     "Ana" => [8, 7, 9],
     "Luis" => [5, 6, 4],
-    "María" => [10, 9, 10],
+    "Maria" => [10, 9, 10],
     "Carlos" => [6, 6, 6]
 ];
-// Función para calcular el promedio de notas:
-foreach ($estudiantes as $nombre => $notas){
-        function calcularPromedio($notas){
-            $suma = array_sum($notas);   
-            $totalNotas = count($notas); 
-            return $suma / $totalNotas; 
-        }
+
+// 2. Función para calcular el promedio:
+function calcularPromedio($notas) {
+    $suma = array_sum($notas);   
+    $cantidad = count($notas);   
+    return $suma / $cantidad;    
 }
 
+
+// 3. Recorremos el array de estudiantes para calcular promedios y estados:
 foreach ($estudiantes as $nombre => $notas) {
-    $promedioActual = calcularPromedio($notas);
     
-    // Comparamos el promedio:
-    if ($promedioActual >= 6) {
-        $estado = "<p>Aprobado</p>";
-        $contadorAprobados++; 
+    // función para obtener el promedio del estudiante actual
+    $promedio = calcularPromedio($notas);
+    
+    // 4. Verificamos es estado del estudiante (Aprobado/Suspenso)
+    if ($promedio >= 6) {
+        $estado = "Aprobado";
+        $aprobados++; // Aumentamos el contador de aprobados
     } else {
-        $estado = "<p>Suspenso</p>";
-        $contadorSuspendidos++; 
+        $estado = "Suspenso";
+        $suspendidos++; // Aumentamos el contador de suspendidos
     }
 
+    
 }
+
+?>
