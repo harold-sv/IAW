@@ -25,7 +25,7 @@ foreach ($estudiantes as $nombre => $notas) {
     // función para obtener el promedio del estudiante actual
     $promedio = calcularPromedio($notas);
     
-    // 4. Verificamos es estado del estudiante (Aprobado/Suspenso)
+    //Verificamos es estado del estudiante (Aprobado/Suspenso)
     if ($promedio >= 6) {
         $estado = "Aprobado";
         $aprobados++; // Aumentamos el contador de aprobados
@@ -33,16 +33,23 @@ foreach ($estudiantes as $nombre => $notas) {
         $estado = "Suspenso";
         $suspendidos++; // Aumentamos el contador de suspendidos
     }
-    // 6. Promedio más alto:
+    //Promedio más alto:
     if ($promedio > $mejorPromedio) {
         $mejorPromedio = $promedio;
         $mejorEstudiante = $nombre;
     }
     //Título del listado
     echo "<h2>Calificaciones de los estudiantes</h2>";
+
     // Mostramos los resultados promedio y estado del estudiante:
     echo "Estudiante: <p>$nombre</p> | Promedio: " . number_format($promedio, 1) . " | Estado: $estado <br>";
     
+    //Mostramos el total de aprobados y suspendidos
+    echo "Total de aprobados: $aprobados <br>";
+    echo "Total de suspendidos: $suspendidos <br>";
+
+    // mostramos el estudiante con el mejor promedio
+    echo "<h3>Estudiante con el promedio más alto: $mejorEstudiante (" . number_format($mejorPromedio, 1) . ")</h3>";
 }
 
 ?>
