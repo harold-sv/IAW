@@ -8,11 +8,14 @@ $carrito = [
     ["producto" => "Teclado", "precio" => 45, "cantidad" => 1],
 ];
 
+// Título.
+echo "<h2>Factura</h2>";
+
 // 1. Mostramos el contenido del carrito con subtotal por producto.
 foreach ($carrito as $item) {
     $subtotal = $item['precio'] * $item['cantidad'];
     
-    echo "Producto: <p>{$item['producto']}</p> <br>";
+    echo "Producto: <p>{$item['producto']}</p> ";
     echo "Precio unitario: {$item['precio']}€ | Cantidad: {$item['cantidad']} <br>";
     echo "Subtotal: <p>$subtotal €</p> <hr>";
 }
@@ -40,5 +43,11 @@ if ($totalSinDescuento > 1000) {
 
 $montoDescuento = ($totalSinDescuento * $descuentoPorcentaje) / 100;
 $totalFinal = $totalSinDescuento - $montoDescuento;
+
+// Resultados finales.
+echo "<h3>Resumen de la Factura:</h3>";
+echo "Total bruto: " . number_format($totalSinDescuento, 2) . "€ <br>";
+echo "Descuento aplicado: $descuentoPorcentaje% (-" . number_format($montoDescuento, 2) . "€) <br>";
+echo "<p>Total a pagar: " . number_format($totalFinal, 2) . "€</p>";
 
 ?>
