@@ -23,4 +23,7 @@ $todasLasPalabras = explode(" ", $textoMinusculas);
 // 2. Total de palabras:
 $totalPalabrasValidas = count($palabrasFiltradas);
 
+// 3. Contar palabras repetidas:
+$conteo = array_count_values($palabrasFiltradas);
+
 ?>
