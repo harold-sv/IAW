@@ -26,6 +26,13 @@ $totalPalabrasValidas = count($palabrasFiltradas);
 // 3. Contar palabras repetidas:
 $conteo = array_count_values($palabrasFiltradas);
 
+// Inicializamos variables:
+$palabraMasRepetida = "";
+$maxVeces = 0;
+
+echo "Total de palabras analizadas (de 3 o más letras): <p>$totalPalabrasValidas</p> <br><br>";
+
+echo "<h3>Palabras que se repiten (más de 1 vez):</h3>";
 
 foreach ($conteo as $palabra => $cantidad) {
     // 4. Mostramos solo si aparece más de una vez
