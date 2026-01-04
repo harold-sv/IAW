@@ -20,6 +20,15 @@ $textoMinusculas = strtolower($textoLimpio);
 // Convertimos array a explode:
 $todasLasPalabras = explode(" ", $textoMinusculas);
 
+// 6. Filtramos palabras de menos de 3 letras:
+$palabrasFiltradas = [];
+foreach ($todasLasPalabras as $palabra) {
+    // eliminamos espacios y verificamos longitud
+    if (strlen(trim($palabra)) >= 3) {
+        $palabrasFiltradas[] = trim($palabra);
+    }
+}
+
 // 2. Total de palabras:
 $totalPalabrasValidas = count($palabrasFiltradas);
 
@@ -47,14 +56,6 @@ foreach ($conteo as $palabra => $cantidad) {
     }
 }
 
-// 6. Filtramos palabras de menos de 3 letras:
-$palabrasFiltradas = [];
-foreach ($todasLasPalabras as $palabra) {
-    // eliminamos espacios y verificamos longitud
-    if (strlen(trim($palabra)) >= 3) {
-        $palabrasFiltradas[] = trim($palabra);
-    }
-}
 
 // Mostramos la palabra más repetida:
 echo "<h3>La palabra más frecuente:</h3>";
