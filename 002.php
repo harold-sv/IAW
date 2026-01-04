@@ -29,4 +29,16 @@ function calcularTotal($carrito) {
 $totalSinDescuento = calcularTotal($carrito);
 echo "<h3>Total sin descuento: $totalSinDescuento €</h3>";
 
+// 3. Aplicamos el descuento (10% si < 1000€/5% si < 500€).
+$descuentoPorcentaje = 0;
+
+if ($totalSinDescuento > 1000) {
+    $descuentoPorcentaje = 10; // 10%
+} elseif ($totalSinDescuento > 500) {
+    $descuentoPorcentaje = 5;  // 5%
+}
+
+$montoDescuento = ($totalSinDescuento * $descuentoPorcentaje) / 100;
+$totalFinal = $totalSinDescuento - $montoDescuento;
+
 ?>
