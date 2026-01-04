@@ -12,5 +12,9 @@ Aunque digan que el tiempo te ha pasado, sigues firme, robusto y bien plantado.
 Porque si WordPress y la web aún resisten, es porque tus funciones aún existen. 
 Terminas con ?> y cierras el telón, dejando un HTML en perfecta unión. PHP, mi fiel y viejo compañero, el lenguaje más noble y aventurero.";
 
+// Quitamos puntos, comas, saltos de línea y retornos:
+$textoLimpio = str_replace([",", ".", "\n", "\r"], "", $texto);
+// 1. Convertimos todo a minúsculas
+$textoMinusculas = strtolower($textoLimpio);
 
 ?>
