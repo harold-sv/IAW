@@ -16,3 +16,17 @@ foreach ($estudiantes as $nombre => $notas){
             return $suma / $totalNotas; 
         }
 }
+
+foreach ($estudiantes as $nombre => $notas) {
+    $promedioActual = calcularPromedio($notas);
+    
+    // Comparamos el promedio:
+    if ($promedioActual >= 6) {
+        $estado = "<p>Aprobado</p>";
+        $contadorAprobados++; 
+    } else {
+        $estado = "<p>Suspenso</p>";
+        $contadorSuspendidos++; 
+    }
+
+}
